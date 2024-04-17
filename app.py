@@ -5,7 +5,12 @@ def createDeck():
   return deck
 
 deck = createDeck()
-print(deck)
+
+def getRandomCard(deck):
+    import random
+    random_index = random.randint(0, len(deck) - 1)
+    print('random_index', random_index)
+    return deck.pop(random_index)
 
 def printInstructions():
     print("Welcome to Text-based Blackjack!")
