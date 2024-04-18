@@ -6,6 +6,7 @@ def createDeck():
 
 deck = createDeck()
 player_hand = []
+dealer_hand = []
 
 def getRandomCard(deck):
     import random
@@ -29,8 +30,16 @@ def printInstructions():
     print("Instructions:")
     print("- Type 'hit' to draw another card")
     print("- Type 'stand' to keep your current hand \n")
-    print(f"Player's Hand: {player_hand} Total: ??")
-    print("Dealer's Hand: Total: ?? \n")
+    print(f"Player's Hand: {''.join(player_hand)} Total: {calculate_hand(player_hand)} \n")
+    print(f"Dealer's Hand: [?]{dealer_hand[-1]} \n")
+
+
+def deal_initial_hands():
+    for i in range(2):
+        rank, suit = getRandomCard(deck)
+        player_hand.append(str(f"[{rank}{suit}]"))
+        rank, suit = getRandomCard(deck)
+        dealer_hand.append(str(f"[{rank}{suit}]"))
 
 def get_player_input():
     player_input = input("Do you want to hit or stand? (hit/stand): ")
@@ -46,6 +55,7 @@ def get_player_input():
         get_player_input()
 
 def startGame():
+    deal_initial_hands()
     printInstructions()
     get_player_input()
 
