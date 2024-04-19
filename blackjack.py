@@ -41,11 +41,18 @@ def deal_initial_hands():
         rank, suit = getRandomCard(deck)
         dealer_hand.append(str(f"[{rank}{suit}]"))
 
+def determine_bust():
+    if calculate_hand(player_hand) > 21:
+        print(f"Player's Hand: {''.join(player_hand)} Total: {calculate_hand(player_hand)} \n")
+        print("Bust! Dealer wins.")
+        exit()
+
 def get_player_input():
     player_input = input("Do you want to hit or stand? (hit/stand): ")
     if player_input == 'hit':
         rank, suit = getRandomCard(deck)
         player_hand.append(str(f"[{rank}{suit}]"))
+        determine_bust()
         print(f"Player's Hand: {''.join(player_hand)} Total: {calculate_hand(player_hand)} \n")
         get_player_input()
     elif player_input == 'stand':
