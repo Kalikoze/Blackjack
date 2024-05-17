@@ -12,7 +12,6 @@ Welcome to my Blackjack game! This is a simple text-based implementation of the 
 6. After the player's turn, the dealer reveals their second card and continues to draw cards until their hand value is 17 or higher.
 7. If the dealer's hand value exceeds 21, they "bust" and the player wins.
 8. If neither the player nor the dealer busts, the one with the hand value closest to 21 wins.
-9. In case of a tie, it's a "push" and the game ends in a draw.
 
 ## Setup Instructions
 To play the Blackjack game, follow these steps:
@@ -37,4 +36,6 @@ The `for` loops were essential for iterating over the cards in the deck and calc
 
 Conditional logic played a crucial role in implementing the game rules. I used `if` statements to check for conditions such as busting, winning, and tying. Based on these conditions, I could determine the outcome of each round and the overall winner of the game.
 
-Overall, this project expanded my understanding of Python programming concepts and introduced me to more advanced topics such as additional data structures, loops, and conditional statements. It's been a joy getting to see what Python offers and how it compares to my experience with JavaScript!
+In my recent refactoring, I focused on adhering to the Single Responsibility Principle (SRP) by breaking down functions into smaller, more manageable pieces. For example, I separated input validation logic from the main game loop, which made the code cleaner and easier to maintain. This refactoring also improved the readability and modularity of the code, making it easier to understand and extend.
+
+Overall, this project expanded my understanding of Python programming concepts and introduced me to more advanced topics such as additional data structures, loops, and conditional statements. The refactoring process taught me the importance of writing clean, maintainable code by following principles like SRP. It's been a joy getting to see what Python offers and how it compares to my experience with JavaScript!
